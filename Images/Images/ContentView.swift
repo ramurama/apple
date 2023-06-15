@@ -22,13 +22,14 @@ extension Image {
 
 struct ContentView: View {
     
-    private let imageUrl: String = "https://credo.academy/credo-academy@3x.png"
+    private let imageUrlStr: String = "https://credo.academy/credo-academy@3x.png"
+    
     
     var body: some View {
         VStack {
             
             
-            Text("RAMU")
+            Text("RAM")
                 .font(.system(size: 100))
                 .fontWeight(.black)
                 .foregroundStyle(
@@ -51,7 +52,9 @@ struct ContentView: View {
             let animation: Animation = .spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0.25)
             let transaction = Transaction(animation: animation)
             
-            AsyncImage(url: URL(string: imageUrl), transaction: transaction ) {
+            let imageUrl = URL(string: imageUrlStr)
+            
+            AsyncImage(url: imageUrl, transaction: transaction ) {
                 phase in switch phase {
                 case .success(let image):
                     image.imageModifier()
