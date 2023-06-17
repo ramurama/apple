@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1732AB9F2A3E339A009D3952 /* CircleGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1732AB9E2A3E339A009D3952 /* CircleGroupView.swift */; };
+		1732ABA22A3E3599009D3952 /* RestartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1732ABA12A3E3599009D3952 /* RestartButton.swift */; };
+		1732ABA62A3E36C8009D3952 /* HomeContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1732ABA52A3E36C8009D3952 /* HomeContent.swift */; };
+		1732ABAA2A3E373D009D3952 /* OnboardingHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1732ABA92A3E373D009D3952 /* OnboardingHeader.swift */; };
+		1732ABAD2A3E3799009D3952 /* OnboardingContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1732ABAC2A3E3799009D3952 /* OnboardingContent.swift */; };
+		1732ABB02A3E380C009D3952 /* SliderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1732ABAF2A3E380C009D3952 /* SliderButton.swift */; };
+		1732ABB22A3E4473009D3952 /* SliderButtonCapsule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1732ABB12A3E4473009D3952 /* SliderButtonCapsule.swift */; };
+		1732ABB42A3E45EF009D3952 /* SliderButtonDraggableCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1732ABB32A3E45EF009D3952 /* SliderButtonDraggableCircle.swift */; };
 		8902E2012A3BA7D300085A59 /* RestartApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8902E2002A3BA7D300085A59 /* RestartApp.swift */; };
 		8902E2032A3BA7D300085A59 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8902E2022A3BA7D300085A59 /* ContentView.swift */; };
 		8902E2052A3BA7D500085A59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8902E2042A3BA7D500085A59 /* Assets.xcassets */; };
@@ -18,6 +26,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1732AB9E2A3E339A009D3952 /* CircleGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleGroupView.swift; sourceTree = "<group>"; };
+		1732ABA12A3E3599009D3952 /* RestartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestartButton.swift; sourceTree = "<group>"; };
+		1732ABA52A3E36C8009D3952 /* HomeContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContent.swift; sourceTree = "<group>"; };
+		1732ABA92A3E373D009D3952 /* OnboardingHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingHeader.swift; sourceTree = "<group>"; };
+		1732ABAC2A3E3799009D3952 /* OnboardingContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContent.swift; sourceTree = "<group>"; };
+		1732ABAF2A3E380C009D3952 /* SliderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderButton.swift; sourceTree = "<group>"; };
+		1732ABB12A3E4473009D3952 /* SliderButtonCapsule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderButtonCapsule.swift; sourceTree = "<group>"; };
+		1732ABB32A3E45EF009D3952 /* SliderButtonDraggableCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderButtonDraggableCircle.swift; sourceTree = "<group>"; };
 		8902E1FD2A3BA7D300085A59 /* Restart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Restart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8902E2002A3BA7D300085A59 /* RestartApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestartApp.swift; sourceTree = "<group>"; };
 		8902E2022A3BA7D300085A59 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -41,6 +57,68 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1732AB9D2A3E337F009D3952 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1732AB9E2A3E339A009D3952 /* CircleGroupView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1732ABA02A3E3551009D3952 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		1732ABA32A3E3638009D3952 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				1732ABA12A3E3599009D3952 /* RestartButton.swift */,
+				1732ABA52A3E36C8009D3952 /* HomeContent.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		1732ABA42A3E3674009D3952 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				1732ABA32A3E3638009D3952 /* Components */,
+				8902E21E2A3BADC900085A59 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		1732ABA72A3E36F5009D3952 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				8902E21C2A3BADC000085A59 /* OnboardingView.swift */,
+				1732ABA82A3E3702009D3952 /* Components */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		1732ABA82A3E3702009D3952 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				1732ABAE2A3E37F2009D3952 /* SliderButton */,
+				1732ABA92A3E373D009D3952 /* OnboardingHeader.swift */,
+				1732ABAC2A3E3799009D3952 /* OnboardingContent.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		1732ABAE2A3E37F2009D3952 /* SliderButton */ = {
+			isa = PBXGroup;
+			children = (
+				1732ABAF2A3E380C009D3952 /* SliderButton.swift */,
+				1732ABB12A3E4473009D3952 /* SliderButtonCapsule.swift */,
+				1732ABB32A3E45EF009D3952 /* SliderButtonDraggableCircle.swift */,
+			);
+			path = SliderButton;
+			sourceTree = "<group>";
+		};
 		8902E1F42A3BA7D300085A59 = {
 			isa = PBXGroup;
 			children = (
@@ -61,13 +139,13 @@
 			isa = PBXGroup;
 			children = (
 				8902E21B2A3BAD5000085A59 /* Info.plist */,
-				8902E21A2A3BAB8600085A59 /* Utilities */,
-				8902E2192A3BAB6D00085A59 /* Views */,
-				8902E2122A3BA91E00085A59 /* Sounds */,
 				8902E2002A3BA7D300085A59 /* RestartApp.swift */,
-				8902E2182A3BAB5900085A59 /* Screens */,
 				8902E2042A3BA7D500085A59 /* Assets.xcassets */,
 				8902E2062A3BA7D500085A59 /* Preview Content */,
+				8902E2182A3BAB5900085A59 /* Screens */,
+				8902E2122A3BA91E00085A59 /* Sounds */,
+				1732ABA02A3E3551009D3952 /* Utils */,
+				1732AB9D2A3E337F009D3952 /* Views */,
 			);
 			path = Restart;
 			sourceTree = "<group>";
@@ -92,25 +170,11 @@
 		8902E2182A3BAB5900085A59 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				1732ABA72A3E36F5009D3952 /* Onboarding */,
+				1732ABA42A3E3674009D3952 /* Home */,
 				8902E2022A3BA7D300085A59 /* ContentView.swift */,
-				8902E21C2A3BADC000085A59 /* OnboardingView.swift */,
-				8902E21E2A3BADC900085A59 /* HomeView.swift */,
 			);
 			path = Screens;
-			sourceTree = "<group>";
-		};
-		8902E2192A3BAB6D00085A59 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		8902E21A2A3BAB8600085A59 /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,8 +249,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1732ABA62A3E36C8009D3952 /* HomeContent.swift in Sources */,
+				1732ABAD2A3E3799009D3952 /* OnboardingContent.swift in Sources */,
+				1732AB9F2A3E339A009D3952 /* CircleGroupView.swift in Sources */,
+				1732ABB02A3E380C009D3952 /* SliderButton.swift in Sources */,
+				1732ABA22A3E3599009D3952 /* RestartButton.swift in Sources */,
 				8902E21D2A3BADC000085A59 /* OnboardingView.swift in Sources */,
+				1732ABB42A3E45EF009D3952 /* SliderButtonDraggableCircle.swift in Sources */,
 				8902E21F2A3BADC900085A59 /* HomeView.swift in Sources */,
+				1732ABB22A3E4473009D3952 /* SliderButtonCapsule.swift in Sources */,
+				1732ABAA2A3E373D009D3952 /* OnboardingHeader.swift in Sources */,
 				8902E2032A3BA7D300085A59 /* ContentView.swift in Sources */,
 				8902E2012A3BA7D300085A59 /* RestartApp.swift in Sources */,
 			);

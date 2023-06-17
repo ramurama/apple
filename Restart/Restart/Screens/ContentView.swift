@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     
+    //    if a value for the onboarding key is found by the app, then this initialization to true will be skipped.
+    //    This initialization will be considered only when the app does not has a defined value for the key before
     @AppStorage("onboarding") var isOnboardingViewActive: Bool = true
     
     var body: some View {
