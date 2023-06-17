@@ -8,23 +8,33 @@
 import SwiftUI
 
 struct OnboardingHeader: View {
+    
+    @State private var isAnimating: Bool = false
+    
     var body: some View {
-        VStack(spacing: 0) {
-            Text("Share.")
-                .font(.system(size: 60))
-                .fontWeight(.heavy)
+        ZStack {
+            VStack(spacing: 0) {
+                Text("Share.")
+                    .font(.system(size: 60))
+                    .fontWeight(.heavy)
+                    .foregroundColor(.white)
+                
+                Text("""
+                It's not how much we give but
+                how much love we put into giving
+                """)
+                .font(.title3)
+                .fontWeight(.light)
                 .foregroundColor(.white)
-            
-            Text("""
-            It's not how much we give but
-            how much love we put into giving
-            """)
-            .font(.title3)
-            .fontWeight(.light)
-            .foregroundColor(.white)
-            .multilineTextAlignment(.center)
-            .padding(.horizontal, 10)
-        }
+                .multilineTextAlignment(.center)
+                .padding(.horizontal, 10)
+            }
+            .opacity(isAnimating ? 1 : 0)
+            .offset(y: isAnimating ? 0 : -40)
+        .animation(.easeOut(duration: 1), value: isAnimating)
+        }.onAppear(perform: {
+            isAnimating = true
+        })
     }
 }
 

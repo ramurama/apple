@@ -19,7 +19,9 @@ struct HomeView: View {
             
             Spacer()
             RestartButton(action: {
-                isOnboardingViewActive = true
+                withAnimation {
+                    isOnboardingViewActive = true
+                }
             })
         }
         

@@ -11,8 +11,11 @@ struct OnboardinView: View {
     
     
     @AppStorage("onboarding") var isOnboardingViewActive: Bool = true
+
     
     var body: some View {
+        
+        
         ZStack {
             
             Color("ColorBlue")
@@ -26,9 +29,10 @@ struct OnboardinView: View {
                 OnboardingContent()
                 
                 SliderButton(action: {
-                    isOnboardingViewActive = false
+                    withAnimation {
+                        isOnboardingViewActive = false
+                    }
                 })
-                
             }
             
             

@@ -47,12 +47,14 @@ struct SliderButtonDraggableCircle: View {
                             buttonOffset = gesture.translation.width
                         }
                     }).onEnded({ _ in
+                        
                         if(buttonOffset > buttonWidth / 2) {
                             buttonOffset = buttonWidth - 80
                             action()
                         } else {
                             buttonOffset = 0
                         }
+                        
                     })
                 )
             

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SliderButton: View {
     
-    
+    @State private var isAnimating: Bool = false
     
     @State var action: () -> ()
     
@@ -21,6 +21,7 @@ struct SliderButton: View {
     @State private var buttonOffset: CGFloat = 0
     
     var body: some View {
+        
         ZStack {
             
             SliderButtonCapsule()
@@ -28,8 +29,16 @@ struct SliderButton: View {
             SliderButtonDraggableCircle(buttonOffset: buttonOffset, buttonWidth: buttonWidth, action: action)
             
             
-        }.frame(width: buttonWidth, height: 80, alignment: .center)
-            .padding(15)
+        }
+        .frame(width: buttonWidth, height: 80, alignment: .center)
+        .padding(15)
+        .opacity(isAnimating ? 1 : 0)
+        .offset(y: isAnimating ? 0 : 40)
+        .animation(.easeOut(duration: 1), value: isAnimating)
+        .onAppear(perform: {
+            isAnimating = true
+        })
+        
     }
 }
 
@@ -39,7 +48,7 @@ struct SliderButton_Previews: PreviewProvider {
             Color("ColorBlue").ignoresSafeArea()
             
             SliderButton(action: {
-                print("slider button action triggered")   
+                print("slider button action triggered")
             })
         }
     }

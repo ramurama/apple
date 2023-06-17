@@ -15,11 +15,13 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
+            
             if isOnboardingViewActive {
                 OnboardinView()
             } else {
                 HomeView()
             }
+            
         }
     }
 }
