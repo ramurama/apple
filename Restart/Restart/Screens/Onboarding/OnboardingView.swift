@@ -11,10 +11,11 @@ struct OnboardinView: View {
     
     
     @AppStorage("onboarding") var isOnboardingViewActive: Bool = true
+    
+    
 
     
     var body: some View {
-        
         
         ZStack {
             
@@ -30,13 +31,15 @@ struct OnboardinView: View {
                 
                 SliderButton(action: {
                     withAnimation {
+                        
+                        playSound(sound: "chimeup", type: "mp3")
                         isOnboardingViewActive = false
                     }
                 })
             }
             
-            
         }
+        .preferredColorScheme(.dark)
     }
 }
 

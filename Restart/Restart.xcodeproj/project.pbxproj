@@ -15,6 +15,7 @@
 		1732ABB02A3E380C009D3952 /* SliderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1732ABAF2A3E380C009D3952 /* SliderButton.swift */; };
 		1732ABB22A3E4473009D3952 /* SliderButtonCapsule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1732ABB12A3E4473009D3952 /* SliderButtonCapsule.swift */; };
 		1732ABB42A3E45EF009D3952 /* SliderButtonDraggableCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1732ABB32A3E45EF009D3952 /* SliderButtonDraggableCircle.swift */; };
+		1732ABB62A3EF571009D3952 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1732ABB52A3EF571009D3952 /* AudioPlayer.swift */; };
 		8902E2012A3BA7D300085A59 /* RestartApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8902E2002A3BA7D300085A59 /* RestartApp.swift */; };
 		8902E2032A3BA7D300085A59 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8902E2022A3BA7D300085A59 /* ContentView.swift */; };
 		8902E2052A3BA7D500085A59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8902E2042A3BA7D500085A59 /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 		1732ABAF2A3E380C009D3952 /* SliderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderButton.swift; sourceTree = "<group>"; };
 		1732ABB12A3E4473009D3952 /* SliderButtonCapsule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderButtonCapsule.swift; sourceTree = "<group>"; };
 		1732ABB32A3E45EF009D3952 /* SliderButtonDraggableCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderButtonDraggableCircle.swift; sourceTree = "<group>"; };
+		1732ABB52A3EF571009D3952 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		8902E1FD2A3BA7D300085A59 /* Restart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Restart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8902E2002A3BA7D300085A59 /* RestartApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestartApp.swift; sourceTree = "<group>"; };
 		8902E2022A3BA7D300085A59 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 		1732ABA02A3E3551009D3952 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				1732ABB52A3EF571009D3952 /* AudioPlayer.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 				1732ABB22A3E4473009D3952 /* SliderButtonCapsule.swift in Sources */,
 				1732ABAA2A3E373D009D3952 /* OnboardingHeader.swift in Sources */,
 				8902E2032A3BA7D300085A59 /* ContentView.swift in Sources */,
+				1732ABB62A3EF571009D3952 /* AudioPlayer.swift in Sources */,
 				8902E2012A3BA7D300085A59 /* RestartApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -404,6 +408,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = de.ramuramasamy.Restart;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -433,6 +440,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = de.ramuramasamy.Restart;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

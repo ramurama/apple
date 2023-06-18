@@ -20,6 +20,7 @@ struct HomeView: View {
             Spacer()
             RestartButton(action: {
                 withAnimation {
+                    playSound(sound: "success", type: "m4a")
                     isOnboardingViewActive = true
                 }
             })

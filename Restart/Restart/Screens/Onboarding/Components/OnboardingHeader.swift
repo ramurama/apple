@@ -11,10 +11,12 @@ struct OnboardingHeader: View {
     
     @State private var isAnimating: Bool = false
     
+    private let title: String = "Share."
+    
     var body: some View {
         ZStack {
             VStack(spacing: 0) {
-                Text("Share.")
+                Text(title)
                     .font(.system(size: 60))
                     .fontWeight(.heavy)
                     .foregroundColor(.white)

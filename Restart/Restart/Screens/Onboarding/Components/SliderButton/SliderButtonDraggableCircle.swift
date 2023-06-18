@@ -15,6 +15,8 @@ struct SliderButtonDraggableCircle: View {
     
     @State var action: () -> ()
     
+    private let hapticFeedback = UINotificationFeedbackGenerator()
+    
     var body: some View {
         HStack {
             Capsule()
@@ -50,8 +52,11 @@ struct SliderButtonDraggableCircle: View {
                         
                         if(buttonOffset > buttonWidth / 2) {
                             buttonOffset = buttonWidth - 80
+                            
+                            hapticFeedback.notificationOccurred(.success)
                             action()
                         } else {
+                            hapticFeedback.notificationOccurred(.warning)
                             buttonOffset = 0
                         }
                         
