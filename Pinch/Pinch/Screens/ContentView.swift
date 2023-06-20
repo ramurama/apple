@@ -42,6 +42,9 @@ struct ContentView: View {
             
             ZStack {
                 
+                Color.clear
+                
+                //                MARK: - PAGE IMAGE
                 Image("magazine-front-cover")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
@@ -59,12 +62,6 @@ struct ContentView: View {
                             .onChanged({ gesture in
                                 withAnimation(.linear(duration: 1)) {
                                     imageOffset = gesture.translation
-//                                    if imageScale == 1 {
-//
-//                                    } else {
-//                                        imageOffset.width = gesture.translation.width * 0.2
-//                                        imageOffset.height = gesture.translation.height * 0.2
-//                                    }
                                 }
                             })
                             .onEnded({ _ in
@@ -82,6 +79,10 @@ struct ContentView: View {
                     isAnimating = true
                 }
             })
+            //            MARK: - INFO PANEL
+            .overlay(InfoPanelView(scale: imageScale, offset: imageOffset)
+            .padding(.horizontal)
+            .padding(.top, 30), alignment: .top)
             
             
         } // : NavigationView

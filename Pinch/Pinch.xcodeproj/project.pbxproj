@@ -11,6 +11,7 @@
 		1732ABC62A401DBB009D3952 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1732ABC52A401DBB009D3952 /* ContentView.swift */; };
 		1732ABC82A401DBD009D3952 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1732ABC72A401DBD009D3952 /* Assets.xcassets */; };
 		1732ABCB2A401DBD009D3952 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1732ABCA2A401DBD009D3952 /* Preview Assets.xcassets */; };
+		890417482A4225A1004C7166 /* InfoPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890417472A4225A1004C7166 /* InfoPanelView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		1732ABC52A401DBB009D3952 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1732ABC72A401DBD009D3952 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1732ABCA2A401DBD009D3952 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		890417472A4225A1004C7166 /* InfoPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPanelView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,7 @@
 		1732ABC22A401DBB009D3952 /* Pinch */ = {
 			isa = PBXGroup;
 			children = (
+				890417462A422587004C7166 /* View */,
 				1732ABC32A401DBB009D3952 /* PinchApp.swift */,
 				1732ABD12A401FAC009D3952 /* Screens */,
 				1732ABC72A401DBD009D3952 /* Assets.xcassets */,
@@ -73,6 +76,14 @@
 				1732ABC52A401DBB009D3952 /* ContentView.swift */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		890417462A422587004C7166 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				890417472A4225A1004C7166 /* InfoPanelView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,6 +158,7 @@
 			files = (
 				1732ABC62A401DBB009D3952 /* ContentView.swift in Sources */,
 				1732ABC42A401DBB009D3952 /* PinchApp.swift in Sources */,
+				890417482A4225A1004C7166 /* InfoPanelView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
