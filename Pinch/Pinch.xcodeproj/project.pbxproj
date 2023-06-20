@@ -51,8 +51,6 @@
 		1732ABC22A401DBB009D3952 /* Pinch */ = {
 			isa = PBXGroup;
 			children = (
-				1732ABD32A401FFC009D3952 /* Data */,
-				1732ABD22A401FF6009D3952 /* Model */,
 				1732ABC32A401DBB009D3952 /* PinchApp.swift */,
 				1732ABD12A401FAC009D3952 /* Screens */,
 				1732ABC72A401DBD009D3952 /* Assets.xcassets */,
@@ -75,20 +73,6 @@
 				1732ABC52A401DBB009D3952 /* ContentView.swift */,
 			);
 			path = Screens;
-			sourceTree = "<group>";
-		};
-		1732ABD22A401FF6009D3952 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		1732ABD32A401FFC009D3952 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
