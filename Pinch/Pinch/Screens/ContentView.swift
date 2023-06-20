@@ -15,6 +15,12 @@ struct ContentView: View {
     
     @State private var imageOffset: CGSize = .zero
     
+    @State private var isDrawerOpen: Bool = false
+    
+    func toggleDrawer() {
+        isDrawerOpen.toggle()
+    }
+    
     func zoomImage() {
         return withAnimation(.spring()) {
             imageScale = 5
@@ -128,7 +134,10 @@ struct ContentView: View {
                 resetImage()
             }, onTapZoomIn: {
                 scaleImageByOne()
-            }).padding(.horizontal).padding(.bottom, 50), alignment: .bottom)
+            }).padding(.horizontal).padding(.bottom, 40), alignment: .bottom)
+            .overlay(Drawer(isDrawerOpen: isDrawerOpen, onTapDrawer: {
+                toggleDrawer()
+            }).padding(.top, UIScreen.main.bounds.height / 12), alignment: .topTrailing)
             
             
             
