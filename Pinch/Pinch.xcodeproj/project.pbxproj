@@ -12,6 +12,8 @@
 		1732ABC82A401DBD009D3952 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1732ABC72A401DBD009D3952 /* Assets.xcassets */; };
 		1732ABCB2A401DBD009D3952 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1732ABCA2A401DBD009D3952 /* Preview Assets.xcassets */; };
 		890417482A4225A1004C7166 /* InfoPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890417472A4225A1004C7166 /* InfoPanelView.swift */; };
+		8904174A2A4240F3004C7166 /* ActionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890417492A4240F3004C7166 /* ActionButtonView.swift */; };
+		8904174C2A424683004C7166 /* ActionIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8904174B2A424683004C7166 /* ActionIconView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,8 @@
 		1732ABC72A401DBD009D3952 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1732ABCA2A401DBD009D3952 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		890417472A4225A1004C7166 /* InfoPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPanelView.swift; sourceTree = "<group>"; };
+		890417492A4240F3004C7166 /* ActionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButtonView.swift; sourceTree = "<group>"; };
+		8904174B2A424683004C7166 /* ActionIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionIconView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +86,8 @@
 			isa = PBXGroup;
 			children = (
 				890417472A4225A1004C7166 /* InfoPanelView.swift */,
+				890417492A4240F3004C7166 /* ActionButtonView.swift */,
+				8904174B2A424683004C7166 /* ActionIconView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -157,7 +163,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1732ABC62A401DBB009D3952 /* ContentView.swift in Sources */,
+				8904174C2A424683004C7166 /* ActionIconView.swift in Sources */,
 				1732ABC42A401DBB009D3952 /* PinchApp.swift in Sources */,
+				8904174A2A4240F3004C7166 /* ActionButtonView.swift in Sources */,
 				890417482A4225A1004C7166 /* InfoPanelView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

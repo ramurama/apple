@@ -36,6 +36,26 @@ struct ContentView: View {
         }
     }
     
+    func scaleImageByOne() {
+        return withAnimation(.spring()) {
+            if(imageScale != 5) {
+                imageScale += 1
+            }
+        }
+    }
+    
+    func descaleImageByOne() {
+        return withAnimation(.spring()) {
+            if(imageScale != 1) {
+                imageScale -= 1
+            }
+            
+            if(imageScale == 1) {
+                imageOffset = .zero
+            }
+        }
+    }
+    
     var body: some View {
         
         NavigationView {
@@ -80,9 +100,15 @@ struct ContentView: View {
                 }
             })
             //            MARK: - INFO PANEL
-            .overlay(InfoPanelView(scale: imageScale, offset: imageOffset)
-            .padding(.horizontal)
-            .padding(.top, 30), alignment: .top)
+            .overlay(InfoPanelView(scale: imageScale, offset: imageOffset).padding(.horizontal).padding(.top, 30), alignment: .top)
+            .overlay(ActionButtonView(onTapZoomOut: {
+                descaleImageByOne()
+            }, onTapReset: {
+                resetImage()
+            }, onTapZoomIn: {
+                scaleImageByOne()
+            }).padding(.horizontal).padding(.bottom, 50), alignment: .bottom)
+            
             
             
         } // : NavigationView
