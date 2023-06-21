@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    //    MARK: VARIABLES
     
     @State private var isAnimating: Bool = false
     
@@ -16,6 +17,13 @@ struct ContentView: View {
     @State private var imageOffset: CGSize = .zero
     
     @State private var isDrawerOpen: Bool = false
+    
+    let pages: [Page] = pagesData
+    
+    @State private var currentPageId: Int = 1
+    
+    
+    //    MARK: - HANDLERS
     
     func toggleDrawer() {
         isDrawerOpen.toggle()
@@ -62,6 +70,10 @@ struct ContentView: View {
         }
     }
     
+    func currentPage() -> String {
+        return pages[currentPageId - 1].imageName
+    }
+    
     var body: some View {
         
         NavigationView {
@@ -71,7 +83,7 @@ struct ContentView: View {
                 Color.clear
                 
                 //                MARK: - PAGE IMAGE
-                Image("magazine-front-cover")
+                Image(currentPage())
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .cornerRadius(10)
@@ -96,7 +108,7 @@ struct ContentView: View {
                                 }
                             })
                     )
-//                MARK: - MAGINIFICATION
+                //                MARK: - MAGINIFICATION
                     .gesture(
                         MagnificationGesture()
                             .onChanged({ value in
@@ -135,9 +147,12 @@ struct ContentView: View {
             }, onTapZoomIn: {
                 scaleImageByOne()
             }).padding(.horizontal).padding(.bottom, 40), alignment: .bottom)
+            //            MARK: - DRAWER
             .overlay(Drawer(isDrawerOpen: isDrawerOpen, onTapDrawer: {
                 toggleDrawer()
-            }).padding(.top, UIScreen.main.bounds.height / 12), alignment: .topTrailing)
+            }, onTapThumbnail: { pageId in
+                currentPageId = pageId
+            }).padding(.top, UIScreen.main.bounds.height / 18), alignment: .topTrailing)
             
             
             
