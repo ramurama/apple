@@ -16,6 +16,8 @@
 		890417762A42F9C7004C7166 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890417752A42F9C7004C7166 /* ColorExtension.swift */; };
 		890417782A4421CD004C7166 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890417772A4421CD004C7166 /* HeaderView.swift */; };
 		8932FC952A442A9D008A5134 /* HeaderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8932FC942A442A9D008A5134 /* HeaderButton.swift */; };
+		8932FC972A44313F008A5134 /* ExploreButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8932FC962A44313F008A5134 /* ExploreButton.swift */; };
+		8932FC992A443550008A5134 /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8932FC982A443550008A5134 /* GradientButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		890417752A42F9C7004C7166 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		890417772A4421CD004C7166 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		8932FC942A442A9D008A5134 /* HeaderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderButton.swift; sourceTree = "<group>"; };
+		8932FC962A44313F008A5134 /* ExploreButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreButton.swift; sourceTree = "<group>"; };
+		8932FC982A443550008A5134 /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,7 @@
 				890417722A42F81C004C7166 /* CustomBackgroundView.swift */,
 				890417772A4421CD004C7166 /* HeaderView.swift */,
 				8932FC942A442A9D008A5134 /* HeaderButton.swift */,
+				8932FC962A44313F008A5134 /* ExploreButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -94,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				890417752A42F9C7004C7166 /* ColorExtension.swift */,
+				8932FC982A443550008A5134 /* GradientButton.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -169,8 +175,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				890417642A42F4B3004C7166 /* ContentView.swift in Sources */,
+				8932FC972A44313F008A5134 /* ExploreButton.swift in Sources */,
 				890417782A4421CD004C7166 /* HeaderView.swift in Sources */,
 				890417712A42F6EF004C7166 /* CardView.swift in Sources */,
+				8932FC992A443550008A5134 /* GradientButton.swift in Sources */,
 				890417622A42F4B3004C7166 /* HikeApp.swift in Sources */,
 				890417732A42F81C004C7166 /* CustomBackgroundView.swift in Sources */,
 				8932FC952A442A9D008A5134 /* HeaderButton.swift in Sources */,

@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct HeaderView: View {
-    let gradient = LinearGradient(colors: [.customGrayLight, .customGrayMedium], startPoint: .top, endPoint: .bottom)
+    private let gradient = LinearGradient(colors: [.customGrayLight, .customGrayMedium], startPoint: .top, endPoint: .bottom)
     
-    var action: () -> ()
+    var buttonAction: () -> ()
     
     var body: some View {
         VStack(spacing: 10) {
@@ -25,7 +25,7 @@ struct HeaderView: View {
                 Spacer()
                 
                 HeaderButton(gradient: gradient, action: {
-                    action()
+                    buttonAction()
                 })
                 
             }
@@ -46,7 +46,7 @@ struct HeaderView: View {
 
 struct HeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        HeaderView(action: {
+        HeaderView(buttonAction: {
             print("button pressed")
         })
     }
