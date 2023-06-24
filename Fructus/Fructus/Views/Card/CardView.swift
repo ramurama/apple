@@ -51,7 +51,7 @@ struct CardView: View {
                 isAnimating = true
             }
         })
-        .frame(width: 350, height: 720)
+        .frame(width: 350, height: 700)
         .cornerRadius(30)
     }
 }
@@ -63,5 +63,6 @@ struct CardView_Previews: PreviewProvider {
             image: "blueberry",
             name: "Blueberry",
             info: "Blueberries are sweet, nutritious and wildly popular fruit all over the world.")
+        
     }
 }

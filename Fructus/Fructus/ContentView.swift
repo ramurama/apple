@@ -8,15 +8,28 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    var fruits: [Fruit]
+    
     var body: some View {
-        ZStack {
+        NavigationView {
+            List {
+                ForEach(fruits) { fruit in
+                    FruitListItem(fruit: fruit)
+                        
+                }
+            }
+            .navigationTitle("Fruits")
+            .padding(.horizontal, -18)
             
         }
+        
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(fruits: fruitsData)
+            .previewDevice("iPhone 14")
     }
 }

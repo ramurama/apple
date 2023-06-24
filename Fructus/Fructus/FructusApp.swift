@@ -16,7 +16,7 @@ struct FructusApp: App {
         WindowGroup {
 
             if isOnboadringDone {
-                ContentView()
+                ContentView(fruits: fruitsData)
             } else {
                 OnBoardingView()
             }
