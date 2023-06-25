@@ -16,9 +16,6 @@ struct FruitListItem: View {
             Thumbnail(colors: fruit.gradientColors, imageName: fruit.image)
             
             ListItemContent(title: fruit.title, headline: fruit.headline)
-            
-            Image(systemName: "chevron.right")
-                .foregroundColor(.secondary)
         }
     }
 }
