@@ -11,6 +11,8 @@ struct ContentView: View {
     
     var fruits: [Fruit]
     
+    @State private var isSettingsOpen: Bool = false
+    
     var body: some View {
         NavigationView {
             List {
@@ -24,10 +26,21 @@ struct ContentView: View {
                     )
                 }
             }
-            .navigationTitle("Fruits")
+            .navigationBarTitle(Text("Fruits"), displayMode: .large)
+            .navigationBarItems(trailing:
+                Button(action: {
+                    isSettingsOpen = true
+                }, label: {
+                    Image(systemName: "slider.horizontal.3")
+                }).sheet(isPresented: $isSettingsOpen) {
+                    SettingsView()
+                }
+            )
             .padding(.horizontal, -18)
             
         }
+        //        this is needed for iPad
+        .navigationViewStyle(StackNavigationViewStyle())
         
     }
 }

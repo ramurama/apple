@@ -49,6 +49,8 @@ struct FruitDetailView: View {
             //            add this modifier to the scroll view to ignore the top safe area
             .edgesIgnoringSafeArea(.top)
         }
+        //        this is needed for iPad
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
