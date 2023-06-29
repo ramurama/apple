@@ -9,11 +9,19 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
+        NavigationView {
+            VStack(alignment: .leading, spacing: 20) {
+                CoverImageCarousel()
+                
+                VStack {
+                  
+                }.padding()
+                
+                Spacer()
+            }
+            .navigationBarTitle("Africa", displayMode: .large)
             
-            Text("Content")
         }
-        .padding()
     }
 }
 
