@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CoverImageCarousel: View {
-    private var coverImages: [CoverImageModel] = Bundle.main.decode("covers.json")
+    private var coverImages: [Cover] = Bundle.main.decode("covers.json")
     
     var body: some View {
         TabView {
