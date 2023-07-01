@@ -22,7 +22,7 @@ struct ContentView: View {
                 
                 ForEach(animals) { animal in
                     NavigationLink(
-                        destination: ListDetailView(),
+                        destination: ListDetailView(animal: animal),
                         label: {
                             ListItemView(
                                 image: animal.image, title: animal.name, headline: animal.headline

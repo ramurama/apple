@@ -8,13 +8,34 @@
 import SwiftUI
 
 struct ListDetailView: View {
+    var animal: Animal
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        ScrollView (.vertical, showsIndicators: false) {
+            VStack(alignment: .center, spacing: 20) {
+                Image(animal.image)
+                    .resizable()
+                    .scaledToFill()
+                
+                AnimalHeadlineView(name: animal.name, headline: animal.headline)
+                
+                AnimalDetailHeadingView(icon: "photo.on.rectangle.angled", text: "Wildness in Pictures")
+                
+                ImageGalleryView(images: animal.gallery)
+            }
+            .navigationBarTitle("Learn about \(animal.name)", displayMode: .inline)
+            
+        }
+        
+        
     }
 }
 
 struct ListDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ListDetailView()
+        let animals: [Animal] = Bundle.main.decode("animals.json")
+        
+        ListDetailView(animal: animals[0])
     }
 }
