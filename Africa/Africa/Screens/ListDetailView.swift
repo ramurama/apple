@@ -10,6 +10,8 @@ import SwiftUI
 struct ListDetailView: View {
     var animal: Animal
     
+    @State private var showFullDescription: Bool = false
+    
     var body: some View {
         
         ScrollView (.vertical, showsIndicators: false) {
@@ -18,13 +20,54 @@ struct ListDetailView: View {
                     .resizable()
                     .scaledToFill()
                 
-                AnimalHeadlineView(name: animal.name, headline: animal.headline)
-                
-                AnimalDetailHeadingView(icon: "photo.on.rectangle.angled", text: "Wildness in Pictures")
-                
-                ImageGalleryView(images: animal.gallery)
+                VStack(spacing: 20) {
+                    AnimalHeadlineView(name: animal.name, headline: animal.headline)
+                    
+                    Group {
+                        HeadingView(icon: "photo.on.rectangle.angled", text: "Wildness in Pictures")
+                        
+                        ImageGalleryView(images: animal.gallery)
+                    }
+                    
+                    Group {
+                        HeadingView(icon: "questionmark.circle", text: "Did you know?")
+                        
+                        FactsView(facts: animal.fact)
+                        
+                    }
+                    
+                    
+                    Group {
+                        HeadingView(icon: "info.circle", text: "All about \(animal.name)")
+                        
+                        Text(animal.description)
+                            .font(.body)
+                            .foregroundColor(.primary)
+                            .multilineTextAlignment(.leading)
+                            .lineLimit(showFullDescription ? nil : 10)
+                            .onTapGesture {
+                                showFullDescription.toggle()
+                            }
+                    }
+                    
+                    
+                    Group {
+                        HeadingView(icon: "map", text: "National Parks")
+                        InsetMapView()
+                    }
+                    
+
+                    
+                    Group {
+                        HeadingView(icon: "books.vertical", text: "Learn more")
+                        
+                        SourceLink(sourceName: "Wikipedia", sourceLink: animal.link, linkLabel: animal.name)
+                    }
+                }
+                .padding()
             }
             .navigationBarTitle("Learn about \(animal.name)", displayMode: .inline)
+            
             
         }
         

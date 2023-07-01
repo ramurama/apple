@@ -22,7 +22,7 @@ struct ImageGalleryView: View {
                         .clipShape(
                             RoundedRectangle(cornerRadius: 12)
                         )
-                        .frame(width: UIScreen.main.bounds.width * 0.9)
+                        .frame(width: UIScreen.main.bounds.width * 0.8)
                         .padding(5)
                 }
             }

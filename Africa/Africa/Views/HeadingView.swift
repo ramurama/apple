@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AnimalDetailHeadingView: View {
+struct HeadingView: View {
     var icon: String
     var text: String
     
@@ -26,9 +26,9 @@ struct AnimalDetailHeadingView: View {
     }
 }
 
-struct AnimalDetailHeadingView_Previews: PreviewProvider {
+struct HeadingView_Previews: PreviewProvider {
     static var previews: some View {
-        AnimalDetailHeadingView(icon: "photo.on.rectangle.angled", text: "Wildness in Pictures")
+        HeadingView(icon: "photo.on.rectangle.angled", text: "Wildness in Pictures")
             .previewLayout(.sizeThatFits)
             .padding()
     }
