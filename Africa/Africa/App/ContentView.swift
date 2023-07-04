@@ -28,11 +28,12 @@ struct ContentView: View {
                                 image: animal.image, title: animal.name, headline: animal.headline
                             )
                         })
-                    .listRowBackground(Color.black)
+                    
                 }
                 
             }
             .navigationBarTitle("Africa", displayMode: .large)
+            .listStyle(.inset)
             
         }
     }
