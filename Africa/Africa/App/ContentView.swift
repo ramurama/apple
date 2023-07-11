@@ -31,6 +31,9 @@ struct ContentView: View {
                     
                 }
                 
+                CreditsView()
+                    .modifier(CenterModifier())
+                
             }
             .navigationBarTitle("Africa", displayMode: .large)
             .listStyle(.inset)
