@@ -17,6 +17,8 @@
 		1703BBAF2A5E74D200914877 /* player.json in Resources */ = {isa = PBXBuildFile; fileRef = 1703BBAB2A5E74D200914877 /* player.json */; };
 		1703BBBB2A5E760A00914877 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1703BBBA2A5E760A00914877 /* Constants.swift */; };
 		1703BBBD2A5E76AD00914877 /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1703BBBC2A5E76AD00914877 /* FooterView.swift */; };
+		17C269E22A6110A2002367A6 /* NavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C269E12A6110A2002367A6 /* NavBarView.swift */; };
+		17C269E42A61138F002367A6 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C269E32A61138F002367A6 /* LogoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		1703BBB42A5E755300914877 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		1703BBBA2A5E760A00914877 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1703BBBC2A5E76AD00914877 /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
+		17C269E12A6110A2002367A6 /* NavBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarView.swift; sourceTree = "<group>"; };
+		17C269E32A61138F002367A6 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +122,8 @@
 			isa = PBXGroup;
 			children = (
 				1703BBBC2A5E76AD00914877 /* FooterView.swift */,
+				17C269E12A6110A2002367A6 /* NavBarView.swift */,
+				17C269E32A61138F002367A6 /* LogoView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -226,6 +232,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1703BB9D2A5E743700914877 /* ContentView.swift in Sources */,
+				17C269E42A61138F002367A6 /* LogoView.swift in Sources */,
+				17C269E22A6110A2002367A6 /* NavBarView.swift in Sources */,
 				1703BBBD2A5E76AD00914877 /* FooterView.swift in Sources */,
 				1703BB9B2A5E743700914877 /* TouchdownApp.swift in Sources */,
 				1703BBBB2A5E760A00914877 /* Constants.swift in Sources */,
