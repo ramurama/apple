@@ -10,17 +10,37 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
          // MARK: - FOOTER
-        VStack(spacing: 0) {
-            NavBarView()
-                .background(.white)
-                .shadow(color: .black.opacity(0.05), radius: 5, x: 0, y: 5)
+        GeometryReader {
+            geometry in
             
-            Spacer()
-            
-            FooterView()
-                .padding(.horizontal)
+            ZStack {
+                VStack(spacing: 0) {
+                    NavBarView()
+                        .background(.white)
+                        .shadow(color: .black.opacity(0.05), radius: 5, x: 0, y: 5)
+                        .padding(.top, geometry.safeAreaInsets.top)
+                    
+                   
+                    
+                    ScrollView(.vertical, showsIndicators: false) {
+                        VStack(spacing: 0) {
+                            
+                            PlayerCarouselView()
+                                .padding(.bottom, 40)
+                                .frame(height: 300)
+                                
+                            
+                            FooterView()
+                                .padding(.horizontal)
+                        }
+                    }
+                    
+                    
+                }
+                .background(colorBackground.ignoresSafeArea(.all, edges: .all))
+            }
+            .ignoresSafeArea(.all, edges: .top)
         }
-        .background(colorBackground.ignoresSafeArea(.all, edges: .all))
     }
 }
 
