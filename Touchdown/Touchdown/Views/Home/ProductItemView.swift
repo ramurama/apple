@@ -10,13 +10,26 @@ import SwiftUI
 struct ProductItemView: View {
     let product: Product
     
+    @State var isAnimated: Bool = false
+    
     var body: some View {
         VStack(spacing: 4) {
-            Image(product.image)
-                .resizable()
-                .scaledToFit()
-                .background(Color(red: product.color[0], green: product.color[1], blue: product.color[2]))
-                .cornerRadius(20)
+            
+            //  only the image is animated and not the background that is why background is added to ZStack
+            ZStack {
+                Image(product.image)
+                    .resizable()
+                    .scaledToFit()
+                    .opacity(isAnimated ? 1 : 0)
+            }
+            .background(Color(red: product.colorRed, green: product.colorGreen, blue: product.colorBlue))
+            .cornerRadius(20)
+            .onAppear {
+                withAnimation(.easeIn(duration: 0.5)) {
+                    isAnimated = true
+                }
+            }
+            
             
             
             
@@ -24,6 +37,7 @@ struct ProductItemView: View {
                 Text(product.name)
                     .font(.headline)
                     .fontWeight(.bold)
+                    .foregroundColor(.black)
                 
                 Spacer()
             }
@@ -32,6 +46,7 @@ struct ProductItemView: View {
                 Text(product.priceStr)
                     .font(.footnote)
                     .fontWeight(.light)
+                    .foregroundColor(.gray)
                 
                 Spacer()
             }
@@ -47,9 +62,7 @@ struct ProductItemView_Previews: PreviewProvider {
         
         ProductItemView(product: products[0])
             .previewLayout(.sizeThatFits)
-            .background(colorBackground)
             .padding()
-        
-        
+            .background(colorBackground)
     }
 }

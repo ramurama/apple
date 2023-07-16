@@ -27,7 +27,7 @@ struct NavBarView: View {
                 .offset(x:0, y: isAnimated ? 0 : -25)
                 .onAppear {
                     withAnimation(.easeOut(duration: 0.5)) {
-                        isAnimated.toggle()
+                        isAnimated = true
                     }
                 }
             

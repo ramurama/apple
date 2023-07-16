@@ -18,4 +18,16 @@ struct Product: Identifiable, Codable {
     var priceStr: String {
         "$\(price)"
     }
+    
+    var colorRed: Double {
+        return color[0]
+    }
+    
+    var colorGreen: Double {
+        return color[1]
+    }
+    
+    var colorBlue: Double {
+        return color[2]
+    }
 }
