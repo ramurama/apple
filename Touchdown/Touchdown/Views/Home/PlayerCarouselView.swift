@@ -16,8 +16,6 @@ struct PlayerCarouselView: View {
                 
                 PlayerImageView(player: player)
                     .padding(.horizontal, 15)
-                    .padding(.top, 10)
-                    
                 
             }
         }
@@ -32,5 +30,7 @@ struct PlayerCarouselView_Previews: PreviewProvider {
     static var previews: some View {
         PlayerCarouselView()
             .previewLayout(.sizeThatFits)
-        .background(Color.gray)    }
+            .background(Color.gray)
+        
+    }
 }

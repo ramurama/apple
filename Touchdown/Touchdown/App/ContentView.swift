@@ -23,11 +23,14 @@ struct ContentView: View {
                    
                     
                     ScrollView(.vertical, showsIndicators: false) {
-                        VStack(spacing: 0) {
+                        VStack(spacing: 10) {
                             
                             PlayerCarouselView()
-                                .padding(.bottom, 40)
-                                .frame(height: 300)
+                                .padding(.vertical, 10)
+                                .frame(height: 260)
+
+                            
+                            CategoryGridView()
                                 
                             
                             FooterView()
