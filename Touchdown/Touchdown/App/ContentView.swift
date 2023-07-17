@@ -33,8 +33,12 @@ struct ContentView: View {
                                 
                                 CategoryGridView()
                                 
+                                SectionHeaderView(title: "Helmets")
                                 ProductsGridView()
                                     .padding(.horizontal)
+                                
+                                SectionHeaderView(title: "Brands")
+                                BrandGridView()
                                     
                                 
                                 FooterView()

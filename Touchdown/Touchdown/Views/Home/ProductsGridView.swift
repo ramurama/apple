@@ -11,7 +11,7 @@ struct ProductsGridView: View {
     var body: some View {
         
         LazyVGrid(columns: gridLayout, spacing: 15) {
-            Section(header: ProductsSectionHeaderView()) {
+            
                 ForEach(products) {
                     product in
                     
@@ -19,7 +19,7 @@ struct ProductsGridView: View {
                         ProductItemView(product: product)
                     })
                 }
-            }
+            
         }
     }
     

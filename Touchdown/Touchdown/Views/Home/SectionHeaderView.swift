@@ -7,22 +7,25 @@
 
 import SwiftUI
 
-struct ProductsSectionHeaderView: View {
+struct SectionHeaderView: View {
+    var title: String
+    
     var body: some View {
         HStack {
-            Text("Helmets")
+            Text(title)
                 .font(.title)
                 .fontWeight(.heavy)
             
             Spacer()
         }
+        .padding()
     }
 }
 
 struct ProductsSectionHeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        ProductsSectionHeaderView()
+        SectionHeaderView(title: "Helmets")
             .previewLayout(.sizeThatFits)
-            .padding()
+            
     }
 }
