@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct DetailHeaderView: View {
+    @EnvironmentObject var shop: Shop
+    
     var body: some View {
         VStack(spacing: 5) {
             HStack {
@@ -20,7 +22,7 @@ struct DetailHeaderView: View {
             }
             
             HStack {
-                Text(sampleProduct.name)
+                Text(shop.selectedProduct?.name ?? "")
                     .font(.title)
                     .foregroundColor(.white)
                     .fontWeight(.heavy)

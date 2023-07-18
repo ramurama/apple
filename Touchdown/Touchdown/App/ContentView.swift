@@ -8,10 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @EnvironmentObject var shop: Shop
+    
     var body: some View {
-         // MARK: - FOOTER
-        NavigationView {
-            GeometryReader {
+        // MARK: - FOOTER
+        
+        
+        ZStack {
+            // if no product is shown currently also no product is selected
+            if shop.showingProduct == false && shop.selectedProduct == nil {
+                GeometryReader {
                 geometry in
                 
                 ZStack {
@@ -21,7 +28,7 @@ struct ContentView: View {
                             .shadow(color: .black.opacity(0.05), radius: 5, x: 0, y: 5)
                             .padding(.top, geometry.safeAreaInsets.top)
                         
-                       
+                        
                         
                         ScrollView(.vertical, showsIndicators: false) {
                             VStack(spacing: 10) {
@@ -29,7 +36,7 @@ struct ContentView: View {
                                 PlayerCarouselView()
                                     .padding(.vertical, 10)
                                     .frame(height: 260)
-
+                                
                                 
                                 CategoryGridView()
                                 
@@ -39,7 +46,7 @@ struct ContentView: View {
                                 
                                 SectionHeaderView(title: "Brands")
                                 BrandGridView()
-                                    
+                                
                                 
                                 FooterView()
                                     .padding(.horizontal)
@@ -51,13 +58,20 @@ struct ContentView: View {
                     .background(colorBackground.ignoresSafeArea(.all, edges: .all))
                 }
                 .ignoresSafeArea(.all, edges: .top)
+                }
+            } else {
+                ProductDetailView()
             }
         }
+        
     }
+    
+
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(Shop())
     }
 }

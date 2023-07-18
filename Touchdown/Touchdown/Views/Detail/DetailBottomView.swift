@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct DetailBottomView: View {
+    @EnvironmentObject var shop: Shop
+    
     var body: some View {
         VStack {
             // ratings + sizes
@@ -17,7 +19,7 @@ struct DetailBottomView: View {
             
             // description
             ScrollView(.vertical, showsIndicators: false) {
-                Text(sampleProduct.description)
+                Text(shop.selectedProduct?.description ?? "")
                     .foregroundColor(.gray)
                     .multilineTextAlignment(.leading)
             }

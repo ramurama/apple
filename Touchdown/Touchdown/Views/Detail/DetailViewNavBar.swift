@@ -8,9 +8,14 @@
 import SwiftUI
 
 struct DetailViewNavBar: View {
+    @EnvironmentObject var shop: Shop
+    
     var body: some View {
         HStack(alignment: .center) {
-            Button(action: {}, label: {
+            Button(action: {
+                shop.showingProduct = false
+                shop.selectedProduct = nil
+            }, label: {
                 Image(systemName: "chevron.left")
                     .foregroundColor(.white)
                     .font(.system(size: 30))

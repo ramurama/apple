@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct DetailTopView: View {
+    @EnvironmentObject var shop: Shop
+    
     var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: 4) {
@@ -15,7 +17,7 @@ struct DetailTopView: View {
                     .font(.footnote)
                     .fontWeight(.black)
                 
-                Text(sampleProduct.priceStr)
+                Text(shop.selectedProduct?.priceStr ?? "")
                     .font(.system(size: 32))
                     .fontWeight(.black)
                 
@@ -23,7 +25,7 @@ struct DetailTopView: View {
             }
             .padding(.top, 40)
             
-            Image(sampleProduct.image)
+            Image(shop.selectedProduct?.image ?? "")
                 .resizable()
                 .scaledToFit()
         }
