@@ -14,28 +14,32 @@ struct ProductDetailView: View {
             
             VStack (spacing: 0) {
                 
-                // Header
-                // Detail top part
-                // detail bottom part
-                // ratings + sizes
-                // description
-                // qty + favorite
-                // ad to cart
-                
+                // detail navbar
                 DetailViewNavBar()
                     .padding(.horizontal)
                     .padding(.top, geometry.safeAreaInsets.top)
                     
-                
+                    
+                // Header
                 DetailHeaderView()
 
+                // Detail top part
                 DetailTopView()
+                    .zIndex(1)
                 
-                Spacer()
+                // detail bottom part
+                DetailBottomView()
+                    .background(
+                        Color.white.clipShape(CustomShape())
+                            .padding(.top, -105)
+                    )
+
             }
             .ignoresSafeArea(.all, edges: .all)
             .background(Color(red: sampleProduct.colorRed, green: sampleProduct.colorGreen, blue: sampleProduct.colorBlue).ignoresSafeArea(.all, edges: .all))
         }
+        .zIndex(0)
+        
         
     }
 }
