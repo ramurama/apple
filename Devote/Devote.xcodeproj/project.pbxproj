@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		177E75A52A68706D000DCF89 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177E75A42A68706D000DCF89 /* Constants.swift */; };
 		17B448002A685B5400032A4A /* DevoteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B447FF2A685B5400032A4A /* DevoteApp.swift */; };
 		17B448022A685B5400032A4A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B448012A685B5400032A4A /* ContentView.swift */; };
 		17B448042A685B5600032A4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17B448032A685B5600032A4A /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		177E75A42A68706D000DCF89 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		17B447FC2A685B5400032A4A /* Devote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Devote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17B447FF2A685B5400032A4A /* DevoteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevoteApp.swift; sourceTree = "<group>"; };
 		17B448012A685B5400032A4A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -70,10 +72,7 @@
 				17B448242A685D2000032A4A /* Style */,
 				17B448232A685CF300032A4A /* Sounds */,
 				17B447FF2A685B5400032A4A /* DevoteApp.swift */,
-				17B448012A685B5400032A4A /* ContentView.swift */,
 				17B448032A685B5600032A4A /* Assets.xcassets */,
-				17B448082A685B5600032A4A /* Persistence.swift */,
-				17B4480A2A685B5600032A4A /* Devote.xcdatamodeld */,
 				17B448052A685B5600032A4A /* Preview Content */,
 			);
 			path = Devote;
@@ -107,6 +106,7 @@
 		17B448252A685D2700032A4A /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				177E75A42A68706D000DCF89 /* Constants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -121,6 +121,7 @@
 		17B448272A685D3500032A4A /* Veiws */ = {
 			isa = PBXGroup;
 			children = (
+				17B448012A685B5400032A4A /* ContentView.swift */,
 			);
 			path = Veiws;
 			sourceTree = "<group>";
@@ -128,6 +129,8 @@
 		17B448282A685D4500032A4A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				17B448082A685B5600032A4A /* Persistence.swift */,
+				17B4480A2A685B5600032A4A /* Devote.xcdatamodeld */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				177E75A52A68706D000DCF89 /* Constants.swift in Sources */,
 				17B448092A685B5600032A4A /* Persistence.swift in Sources */,
 				17B448022A685B5400032A4A /* ContentView.swift in Sources */,
 				17B4480C2A685B5600032A4A /* Devote.xcdatamodeld in Sources */,

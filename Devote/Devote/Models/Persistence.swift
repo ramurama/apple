@@ -8,28 +8,16 @@
 import CoreData
 
 struct PersistenceController {
+    // MARK: - PERSISTENT CONTROLLER
     static let shared = PersistenceController()
 
-    static var preview: PersistenceController = {
-        let result = PersistenceController(inMemory: true)
-        let viewContext = result.container.viewContext
-        for _ in 0..<10 {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
-        }
-        do {
-            try viewContext.save()
-        } catch {
-            // Replace this implementation with code to handle the error appropriately.
-            // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-            let nsError = error as NSError
-            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-        }
-        return result
-    }()
-
+// MARK: - PERSISTENT CONTAINER
     let container: NSPersistentContainer
 
+    // MARK: - INITIALIATION
+    // it is important to configure the persistence type
+    // in memory - all the changes will be destroyed when the app is closed
+    // in memory is useful for testing and using in previews
     init(inMemory: Bool = false) {
         container = NSPersistentContainer(name: "Devote")
         if inMemory {
@@ -53,4 +41,24 @@ struct PersistenceController {
         })
         container.viewContext.automaticallyMergesChangesFromParent = true
     }
+    
+    // MARK: - PREVIEW
+    // test configuration soley for SwiftUI previews
+    static var preview: PersistenceController = {
+        let result = PersistenceController(inMemory: true)
+        let viewContext = result.container.viewContext
+        for _ in 0..<10 {
+            let newItem = Item(context: viewContext)
+            newItem.timestamp = Date()
+        }
+        do {
+            try viewContext.save()
+        } catch {
+            // Replace this implementation with code to handle the error appropriately.
+            // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            let nsError = error as NSError
+            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+        }
+        return result
+    }()
 }
