@@ -9,71 +9,92 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
-    @State var task: String = ""
     
-    private var isButtonDisabled: Bool {
-        // computed property that checks if the string is empty and holds the value in the boolean field
-        task.isEmpty
-    }
+    @State private var showNewTaskForm: Bool = false
+    
     
     @Environment(\.managedObjectContext) private var viewContext
     
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
+    
     private var items: FetchedResults<Item>
     
     var body: some View {
         NavigationView {
-            VStack {
-                
-                VStack(spacing: 16) {
-                    TextField("Task", text: $task)
-                        .padding()
-                        .background(
-                            Color(.systemGray6)
-                        )
-                        .cornerRadius(10)
+            ZStack {
+                // MARK: - MAIN VIEW
+                VStack {
+                    // MARK: - HEADER
+                    Spacer(minLength: 80)
                     
+                    // MARK: - NEW TASK BUTTON
                     Button(action: {
-                        addItem()
+                        showNewTaskForm = true
                     }, label: {
-                        Spacer()
-                        Text("save".uppercased())
-                        Spacer()
-                    })
-                    .padding()
-                    .background(isButtonDisabled ? Color.gray : Color("background-color"))
-                    .font(.headline)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
-                    .disabled(isButtonDisabled)
-                    
-                }
-                .padding()
-                
-                List {
-                    ForEach(items) { item in
-                        NavigationLink {
-
-                            Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+                        Image(systemName: "plus.circle")
+                            .font(.system(size: 24, weight: .semibold, design: .rounded))
                             
-                        } label: {
-                            VStack(alignment: .leading, spacing: 8) {
-                                Text(item.task ?? "")
-                                    .font(.headline)
-                                    .fontWeight(.bold)
+                        Text("New Task")
+                            .font(.system(size: 20, weight: .bold, design: .rounded))
+                    })
+                    .foregroundColor(.white)
+                    .padding(.horizontal)
+                    .padding(.vertical)
+                    .background(
+                        backgroundGradient
+                    )
+                    .clipShape(Capsule())
+                    .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.25), radius: 8, x: 0, y: 4)
+                    
+                    
+                    // MARK: - TASKS
+                    List {
+                        ForEach(items) { item in
+                            NavigationLink {
                                 
-                                Text(item.timestamp!, formatter: itemFormatter)
-                                    .font(.footnote)
-                                    .foregroundColor(.gray)
+                                Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+                                
+                            } label: {
+                                VStack(alignment: .leading, spacing: 8) {
+                                    Text(item.task ?? "")
+                                        .font(.headline)
+                                        .fontWeight(.bold)
+                                    
+                                    Text(item.timestamp!, formatter: itemFormatter)
+                                        .font(.footnote)
+                                        .foregroundColor(.gray)
+                                }
                             }
                         }
+                        .onDelete(perform: deleteItems)
                     }
-                    .onDelete(perform: deleteItems)
+                    // add these both lines to hide the backdround color of the list
+                    .scrollContentBackground(.hidden)
+                    .background(Color.clear)
+                    .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.3), radius: 12)
+                    .padding(.vertical, 0)
+                    // maximise the list on iPad devices
+                    .frame(maxWidth: 640)
                 }
-                .listStyle(.inset)
                 
+                
+                // MARK: - NEW TASK ITEM
+                
+                if showNewTaskForm {
+                    // visual separation using a blank view
+                    BlankView()
+                        .onTapGesture {
+                            withAnimation() {
+                                showNewTaskForm = false 
+                            }
+                        }
+                    NewTaskItemView(isShowing: $showNewTaskForm)
+                }
+            }
+            .onAppear {
+                UITableView.appearance().backgroundColor = UIColor.clear
             }
             .navigationBarTitle("Daily tasks", displayMode: .large)
             .toolbar {
@@ -81,32 +102,15 @@ struct ContentView: View {
                     EditButton()
                 }
             }
+            .background(BackgroundImageView())
+            .background(backgroundGradient.ignoresSafeArea(.all))
             
         }
+        .navigationViewStyle(StackNavigationViewStyle())
+        
     }
     
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
-            newItem.id = UUID()
-            newItem.isCompleted = false
-            newItem.task = task
-            
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-        
-        // reset the text input
-        task = ""
-        hideKeyBoard()
-    }
+    
     
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
