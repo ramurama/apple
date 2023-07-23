@@ -22,91 +22,75 @@ struct ContentView: View {
     private var items: FetchedResults<Item>
     
     var body: some View {
-        NavigationView {
-            ZStack {
-                // MARK: - MAIN VIEW
-                VStack {
-                    // MARK: - HEADER
-                    Spacer(minLength: 80)
+        
+        ZStack {
+            // MARK: - MAIN VIEW
+            VStack {
+                // MARK: - HEADER
+                HeaderView()
+                
+                Spacer(minLength: 80)
+                
+                // MARK: - NEW TASK BUTTON
+                Button(action: {
+                    showNewTaskForm = true
+                }, label: {
+                    Image(systemName: "plus.circle")
+                        .font(.system(size: 24, weight: .semibold, design: .rounded))
                     
-                    // MARK: - NEW TASK BUTTON
-                    Button(action: {
-                        showNewTaskForm = true
-                    }, label: {
-                        Image(systemName: "plus.circle")
-                            .font(.system(size: 24, weight: .semibold, design: .rounded))
-                            
-                        Text("New Task")
-                            .font(.system(size: 20, weight: .bold, design: .rounded))
-                    })
-                    .foregroundColor(.white)
-                    .padding(.horizontal)
-                    .padding(.vertical)
-                    .background(
-                        backgroundGradient
-                    )
-                    .clipShape(Capsule())
-                    .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.25), radius: 8, x: 0, y: 4)
-                    
-                    
-                    // MARK: - TASKS
-                    List {
-                        ForEach(items) { item in
-                            NavigationLink {
-                                
-                                Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-                                
-                            } label: {
-                                VStack(alignment: .leading, spacing: 8) {
-                                    Text(item.task ?? "")
-                                        .font(.headline)
-                                        .fontWeight(.bold)
-                                    
-                                    Text(item.timestamp!, formatter: itemFormatter)
-                                        .font(.footnote)
-                                        .foregroundColor(.gray)
-                                }
-                            }
-                        }
-                        .onDelete(perform: deleteItems)
+                    Text("New Task")
+                        .font(.system(size: 20, weight: .bold, design: .rounded))
+                })
+                .foregroundColor(.white)
+                .padding(.horizontal)
+                .padding(.vertical)
+                .background(
+                    backgroundGradient
+                )
+                .clipShape(Capsule())
+                .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.25), radius: 8, x: 0, y: 4)
+                
+                
+                // MARK: - TASKS
+                List {
+                    ForEach(items) { item in
+                        TaskListItemView(item: item)
+                            .padding(.vertical, 6)
                     }
-                    // add these both lines to hide the backdround color of the list
-                    .scrollContentBackground(.hidden)
-                    .background(Color.clear)
-                    .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.3), radius: 12)
-                    .padding(.vertical, 0)
-                    // maximise the list on iPad devices
-                    .frame(maxWidth: 640)
+                    .onDelete(perform: deleteItems)
                 }
                 
-                
-                // MARK: - NEW TASK ITEM
-                
-                if showNewTaskForm {
-                    // visual separation using a blank view
-                    BlankView()
-                        .onTapGesture {
-                            withAnimation() {
-                                showNewTaskForm = false 
-                            }
-                        }
-                    NewTaskItemView(isShowing: $showNewTaskForm)
-                }
+                // add these both lines to hide the backdround color of the list
+                .scrollContentBackground(.hidden)
+                .background(Color.clear)
+                .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.3), radius: 12)
+                .padding(.vertical, 0)
+                // maximise the list on iPad devices
+                .frame(maxWidth: 640)
             }
-            .onAppear {
-                UITableView.appearance().backgroundColor = UIColor.clear
-            }
-            .navigationBarTitle("Daily tasks", displayMode: .large)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-            }
-            .background(BackgroundImageView())
-            .background(backgroundGradient.ignoresSafeArea(.all))
             
+            
+            // MARK: - NEW TASK ITEM
+            
+            if showNewTaskForm {
+                // visual separation using a blank view
+                BlankView()
+                    .onTapGesture {
+                        withAnimation() {
+                            showNewTaskForm = false
+                        }
+                    }
+                NewTaskItemView(isShowing: $showNewTaskForm)
+            }
         }
-        .navigationViewStyle(StackNavigationViewStyle())
+        .onAppear {
+            UITableView.appearance().backgroundColor = UIColor.clear
+        }
+        
+        .background(BackgroundImageView())
+        .background(backgroundGradient.ignoresSafeArea(.all))
+        
+        
         
     }
     
