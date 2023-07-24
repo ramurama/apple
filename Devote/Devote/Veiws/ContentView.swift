@@ -11,7 +11,7 @@ import CoreData
 struct ContentView: View {
     
     @State private var showNewTaskForm: Bool = false
-    
+    @AppStorage("isDarkMode") private var isDarkMode: Bool = false
     
     @Environment(\.managedObjectContext) private var viewContext
     
@@ -68,13 +68,18 @@ struct ContentView: View {
                 // maximise the list on iPad devices
                 .frame(maxWidth: 640)
             }
+            .blur(radius: showNewTaskForm ? 8.0 : 0, opaque: false)
+            .transition(.move(edge: .bottom))
             
             
             // MARK: - NEW TASK ITEM
             
             if showNewTaskForm {
                 // visual separation using a blank view
-                BlankView()
+                BlankView(
+                    backgroundColor: isDarkMode ? .black : .gray,
+                    backgroundOpactiy: isDarkMode ? 0.3 : 0.5
+                )
                     .onTapGesture {
                         withAnimation() {
                             showNewTaskForm = false
@@ -87,7 +92,10 @@ struct ContentView: View {
             UITableView.appearance().backgroundColor = UIColor.clear
         }
         
-        .background(BackgroundImageView())
+        .background(
+            BackgroundImageView().blur(radius: showNewTaskForm ? 8.0 : 0, opaque: false)
+            .transition(.move(edge: .bottom))
+        )
         .background(backgroundGradient.ignoresSafeArea(.all))
         
         
